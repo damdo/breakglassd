@@ -1,4 +1,4 @@
-module github.com/gokrazy/breakglass
+module github.com/damdo/breakglassd
 
 go 1.21
 
