@@ -195,8 +195,6 @@ func main() {
 	flag.Parse()
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 
-	gokrazy.DontStartOnBoot()
-
 	authorizedKeys, err := loadAuthorizedKeys(*authorizedKeysPath)
 	if err != nil {
 		if os.IsNotExist(err) {
