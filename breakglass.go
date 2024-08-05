@@ -195,6 +195,8 @@ func main() {
 	flag.Parse()
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 
+	gokrazy.WaitForClock()
+
 	authorizedKeys, err := loadAuthorizedKeys(*authorizedKeysPath)
 	if err != nil {
 		if os.IsNotExist(err) {

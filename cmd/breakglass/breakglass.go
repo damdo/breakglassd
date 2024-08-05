@@ -23,6 +23,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/gokrazy/gokrazy"
 	"github.com/gokrazy/internal/config"
 	"github.com/gokrazy/internal/httpclient"
 	"github.com/gokrazy/internal/instanceflag"
@@ -230,6 +231,8 @@ func breakglass() error {
 	if flag.NArg() < 1 {
 		log.Fatalf("syntax: breakglass <hostname> [command]")
 	}
+
+	gokrazy.WaitForClock()
 
 	// If the user did not explicitly specify -update=yes, we default to it.
 	// This differs from the gokr-packer, but breakglass is only useful for
